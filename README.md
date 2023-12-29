@@ -27,7 +27,7 @@
      - Basic pages (home, about, contact).
      - Admin section for quiz management.
      - User section for quiz navigation and participation.
-     - Optional: Quiz history for users and detailed quiz analytics for admins.
+     - Optional: Quiz history for users and detailed quiz analytics for admins,add quizzes categories to make navigation easier for user .
    - **Non-functional Requirements:**
      - Secure authentication.
      - User-friendly interface.

@@ -54,7 +54,30 @@ app.use(bodyParser.json());
       });
     });
 
+//Questions HTTP Services 
+    app.get('/quiz/:quizId/questions', (req, res) => {
+      // Get questions by the id of their parent quiz
+      Question.find({ quizid: req.params.quizId }).then((questions) => {
+        res.send(questions);
+      });
+    });
 
+    app.post('/quiz/:quizId/questions',(req,res)=>{
+      //create a new question in a quiz
+      let newQuestion = Question({
+
+        quizid: req.params.quizId,
+        questionId: req.body.questionId,
+        questionText: req.body.questionText,
+        answer: req.body.answer,
+        options: req.body.options,
+      });
+      newQuestion.save().then((newQuestionDoc)=>{
+        res.send(newQuestionDoc)
+      }).catch((error) => {
+        res.status(400).send(error.message);
+      });
+    });
 
 
 

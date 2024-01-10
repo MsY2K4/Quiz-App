@@ -3,10 +3,10 @@
     <div class="container mx-auto flex justify-between items-center">
       <a routerLink="/home" class="text-white text-lg font-bold">Mindscape</a>
       <div class="hidden md:flex space-x-4">
-        <a routerLink="/home" class="text-white">Home</a>
-        <a routerLink="/quizzes" class="text-white">Quizzes</a>
-        <a routerLink="/about" class="text-white">About</a>
-        <a routerLink="/contact" class="text-white">Contact</a>
+        <a routerLink="/home" class="text-white px-4 py-2">Home</a>
+        <a routerLink="/about" class="text-white px-4 py-2">About</a>
+        <a routerLink="/contact" class="text-white px-4 py-2">Contact</a>
+        <a routerLink="/login" class="bg-white text-black font-bold px-4 py-2 rounded">Login</a>
       </div>
       <div class="md:hidden">
         <!-- Add a responsive menu button -->
@@ -20,9 +20,9 @@
     
     <div *ngIf="isMenuOpen" class="md:hidden">
       <a routerLink="/home" class="text-white block py-2" (click)="toggleMenu()">Home</a>
-      <a routerLink="/quizzes" class="text-white block py-2" (click)="toggleMenu()">Quizzes</a>
       <a routerLink="/about" class="text-white block py-2" (click)="toggleMenu()">About</a>
       <a routerLink="/contact" class="text-white block py-2" (click)="toggleMenu()">Contact</a>
+      <a routerLink="/login" class="bg-white text-black font-bold px-4 py-2 rounded" (click)="toggleMenu()">Login</a>
     </div>
   </nav>
   

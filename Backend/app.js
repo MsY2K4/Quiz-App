@@ -79,6 +79,16 @@ app.use(bodyParser.json());
       });
     });
 
+    app.delete('/quiz/:quizId/questions/:question_id', (req, res) => {
+      // delete a question
+      Question.findOneAndDelete({
+          _id: req.params.question_id,
+          quizid: req.params.quizId
+      }).then((removedQuestionDoc) => {
+          res.send(removedQuestionDoc);
+      });
+    });
+    
 
 
 app.get('/', (req, res) => {

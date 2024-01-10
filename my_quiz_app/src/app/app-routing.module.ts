@@ -7,6 +7,7 @@ import { NavbarComponent } from './index/navbar/navbar.component';
 import { FooterComponent } from './index/footer/footer.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { QuizzesComponent } from './admin/quizzes/quizzes.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:"navbar", component:NavbarComponent},
   {path:"footer", component:FooterComponent},
   {path:"login", component:LoginComponent},
-  {path:"register", component:RegisterComponent}
+  {path:"register", component:RegisterComponent},
+  {path:"quizzes", component: QuizzesComponent},
 
 ];
 

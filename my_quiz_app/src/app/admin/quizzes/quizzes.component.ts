@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrl: './quizzes.component.css'
 })
 export class QuizzesComponent {
-
+  quizzes = [
+    {
+      quizname: 'Angular',
+      quizdescription: 'Test your self in  Angular framework.',
+    },
+    {
+      quizname: 'Angular',
+      quizdescription: 'Test your self in  Angular framework.',
+    },
+    {
+      quizname: 'Angular',
+      quizdescription: 'Test your self in  Angular framework.',
+    },
+    {
+      quizname: 'Angular',
+      quizdescription: 'Test your self in  Angular framework.',
+    },
+  ]
 }

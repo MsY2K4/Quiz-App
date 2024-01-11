@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { QuizService } from '../../quiz.service';
+
+interface Quiz {
+  quizname: string;
+  quizdescription: string;
+}
 
 @Component({
   selector: 'app-quizzes',
@@ -6,26 +12,16 @@ import { Component } from '@angular/core';
   styleUrl: './quizzes.component.css'
 })
 export class QuizzesComponent {
-  quizzes = [
-    {
-      quizname: 'Angular',
-      quizdescription: 'Test yourself in Angular framework.',
-    },
-    {
-      quizname: 'React',
-      quizdescription: 'Test yourself in React framework.',
-    },
-    {
-      quizname: 'Vue',
-      quizdescription: 'Test yourself in Vue framework.',
-    },
-    {
-      quizname: 'JavaScript',
-      quizdescription: 'Test yourself in JavaScript.',
-    },
-  ]
+  quizzes: Quiz[] = [];
   searchTerm: string = '';
   filteredQuizzes: any[] = [];
+
+  constructor(private quizService:QuizService){
+    this.quizService.fetchQuizes().subscribe((response : any)=>{
+      (response as Quiz[]).forEach(res => this.quizzes.push(res));
+      console.log(response);
+    })
+  }
 
   search() {
     this.filteredQuizzes = this.quizzes.filter(
@@ -35,4 +31,10 @@ export class QuizzesComponent {
     );
   }
   
+  createNewQuiz(){
+    this.quizService.createQuiz('test', "tastour").subscribe((response : any)=>{
+      this.quizzes.push(response as Quiz);
+      console.log(response);
+    })
+  }
 }

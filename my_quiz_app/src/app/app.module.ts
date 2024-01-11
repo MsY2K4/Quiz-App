@@ -14,6 +14,7 @@ import { ContactComponent } from './index/contact/contact.component';
 import { NavbarComponent } from './index/navbar/navbar.component';
 import { FooterComponent } from './index/footer/footer.component';
 import { QuizzesComponent } from './admin/quizzes/quizzes.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { QuizzesComponent } from './admin/quizzes/quizzes.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

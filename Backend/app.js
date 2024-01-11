@@ -14,6 +14,12 @@ const Question = require('./db/models/questions.model');
 //load middlweare
 app.use(bodyParser.json());
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:4200"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 //Quiz HTTP Services
 
@@ -26,9 +32,9 @@ app.use(bodyParser.json());
 
     app.post('/quiz', (req, res) => {
       // create new quiz
-      let quizname = req.body.quizname;
-      let quizdescription = req.body.quizdescription;
-      let newQuiz = new Quiz({ quizname, quizdescription: req.body.quizdescription });
+      const quizname = req.body.quizname;
+      const quizdescription = req.body.quizdescription;
+      const newQuiz = new Quiz({ quizname, quizdescription });
       newQuiz.save().then((quizDoc) => {
           res.send(quizDoc);
       });

@@ -15,6 +15,8 @@ import { NavbarComponent } from './index/navbar/navbar.component';
 import { FooterComponent } from './index/footer/footer.component';
 import { QuizzesComponent } from './admin/quizzes/quizzes.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NewQuizComponent } from './admin/new-quiz/new-quiz.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     ContactComponent,
     NavbarComponent,
     FooterComponent,
-    QuizzesComponent
+    QuizzesComponent,
+    PageNotFoundComponent,
+    NewQuizComponent
   ],
   imports: [
     BrowserModule,

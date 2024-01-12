@@ -31,10 +31,5 @@ export class QuizzesComponent {
     );
   }
   
-  createNewQuiz(){
-    this.quizService.createQuiz('test', "tastour").subscribe((response : any)=>{
-      this.quizzes.push(response as Quiz);
-      console.log(response);
-    })
-  }
+
 }

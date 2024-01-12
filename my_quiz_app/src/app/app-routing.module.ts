@@ -8,6 +8,8 @@ import { FooterComponent } from './index/footer/footer.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { QuizzesComponent } from './admin/quizzes/quizzes.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NewQuizComponent } from './admin/new-quiz/new-quiz.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
@@ -18,6 +20,15 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
   {path:"quizzes", component: QuizzesComponent},
+  {path:"NewQuiz", component: NewQuizComponent},
+
+
+
+
+
+
+  { path: '',   redirectTo: '/home', pathMatch: 'full' }, 
+  { path: '**', component: PageNotFoundComponent },
 
 ];
 

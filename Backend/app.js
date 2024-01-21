@@ -69,47 +69,6 @@ app.post('/register', async (req, res) => {
   }
 });
 
-
-//Quiz HTTP Services
-
-    app.get('/quiz', (req, res) => {
-      // return an array of all quizzes
-      Quiz.find({}).then((quizzes) => {
-          res.send(quizzes);
-      });
-    });
-
-    app.post('/quiz', (req, res) => {
-      // create new quiz
-      const quizname = req.body.quizname;
-      const quizdescription = req.body.quizdescription;
-      const newQuiz = new Quiz({ quizname, quizdescription });
-      newQuiz.save().then((quizDoc) => {
-          res.send(quizDoc);
-      });
-    });
-
-    app.patch('/quiz/:id', (req, res) => {
-      // update a quiz
-      Quiz.findOneAndUpdate(
-          { _id: req.params.id },
-          { $set: req.body }
-      ).then(() => {
-          res.sendStatus(200);
-      });
-    });
-
-
-    app.delete('/quiz/:id', (req, res) => {
-      // delete a quiz
-      Quiz.findOneAndDelete({
-          _id: req.params.id
-      }).then((removedQuizDoc) => {
-          res.send(removedQuizDoc);
-      });
-    });
-
-
 //Quiz HTTP Services
 
     app.get('/quiz', (req, res) => {

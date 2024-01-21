@@ -11,6 +11,7 @@ import { QuizzesComponent } from './admin/quizzes/quizzes.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NewQuizComponent } from './admin/new-quiz/new-quiz.component';
 import { NavigateQuizzesComponent } from './user/navigate-quizzes/navigate-quizzes.component';
+import { QuizDetailsComponent } from './admin/quiz-details/quiz-details.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
   {path:"quizzes", component: QuizzesComponent},
+  { path: 'quizzes/:quizId', component: QuizDetailsComponent },
   {path:"NewQuiz", component: NewQuizComponent},
   {path :"navigation" , component : NavigateQuizzesComponent},
 

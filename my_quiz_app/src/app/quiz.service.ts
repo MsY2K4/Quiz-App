@@ -6,13 +6,17 @@ import { WebRequestService } from './web-request.service';
 })
 export class QuizService {
 
-  constructor(private webReqSrevice: WebRequestService) { }
+  constructor(private webReqService: WebRequestService) { }
 
   createQuiz(name: string, description: string){
-   return this.webReqSrevice.post('quiz', { quizname: name, quizdescription: description });
+   return this.webReqService.post('quiz', { quizname: name, quizdescription: description });
   }
 
   fetchQuizes() {
-    return this.webReqSrevice.get("quiz");
+    return this.webReqService.get("quiz");
+  }
+  
+  fetchQuestions(quizId: string) {
+    return this.webReqService.get(`quiz/${quizId}/questions`);
   }
 }

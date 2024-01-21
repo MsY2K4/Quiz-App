@@ -1,0 +1,38 @@
+<div class="p-8">
+  
+    <!-- Check if there are questions available -->
+    <ng-container *ngIf="questions && questions.length > 0; else noQuestions">
+        
+        <!-- Display Questions -->
+      <div *ngFor="let question of questions" class="bg-black p-4 rounded-lg mb-4">
+        <h3 class="text-white">{{ question.questionText }}</h3>
+          <!-- Display the correct answer -->
+
+        <div *ngIf="question.answer !== null && question.answer !== undefined" class="text-green-500 mb-2">
+            Correct Answer: {{ question.answer }}
+          </div>
+          
+          <!-- Display Other Options -->
+          <div *ngIf="question.options && question.options.length > 0">
+            <div *ngFor="let option of question.options" class="text-red-500 mb-2">
+              {{ option }}
+            </div>
+          </div>
+      </div>
+    </ng-container>
+  
+    <!-- If there is no question available -->
+    <ng-template #noQuestions>
+        <main class="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
+            <div class="text-center">
+        <h1 class="mt-4 text-3xl font-bold tracking-tight text-black sm:text-5xl">No questions available for this quiz.</h1>
+            </div>
+        </main>
+      </ng-template>
+  </div>
+
+  <div class="mt-10 flex items-center justify-center gap-x-6">
+    <button  routerLink="/quizzes" class="bg-black text-white font-bold py-2 px-4 rounded inline-flex items-center justify-center">
+        <span>Back</span>
+      </button>
+  </div>

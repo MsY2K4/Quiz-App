@@ -17,6 +17,7 @@ import { QuizzesComponent } from './admin/quizzes/quizzes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NewQuizComponent } from './admin/new-quiz/new-quiz.component';
+import { NavigateQuizzesComponent } from './user/navigate-quizzes/navigate-quizzes.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NewQuizComponent } from './admin/new-quiz/new-quiz.component';
     FooterComponent,
     QuizzesComponent,
     PageNotFoundComponent,
-    NewQuizComponent
+    NewQuizComponent,
+    NavigateQuizzesComponent
   ],
   imports: [
     BrowserModule,

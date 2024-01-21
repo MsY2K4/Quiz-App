@@ -10,6 +10,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { QuizzesComponent } from './admin/quizzes/quizzes.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NewQuizComponent } from './admin/new-quiz/new-quiz.component';
+import { NavigateQuizzesComponent } from './user/navigate-quizzes/navigate-quizzes.component';
+
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
@@ -21,7 +23,7 @@ const routes: Routes = [
   {path:"register", component:RegisterComponent},
   {path:"quizzes", component: QuizzesComponent},
   {path:"NewQuiz", component: NewQuizComponent},
-
+  {path :"navigation" , component : NavigateQuizzesComponent},
 
 
 

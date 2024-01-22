@@ -6,7 +6,6 @@ var questionSchema = mongoose.Schema({
     },
     questionId: {
         type: String,
-        required: true
     },
     questionText:{
         type: String, 

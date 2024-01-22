@@ -12,7 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { NewQuizComponent } from './admin/new-quiz/new-quiz.component';
 import { NavigateQuizzesComponent } from './user/navigate-quizzes/navigate-quizzes.component';
 import { QuizDetailsComponent } from './admin/quiz-details/quiz-details.component';
-
+import { AddQuestionsComponent } from './admin/add-questions/add-questions.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
@@ -26,6 +26,7 @@ const routes: Routes = [
   { path: 'quizzes/:quizId', component: QuizDetailsComponent },
   {path:"NewQuiz", component: NewQuizComponent},
   {path :"navigation" , component : NavigateQuizzesComponent},
+  { path: 'quizzes/:quizId/add-questions', component: AddQuestionsComponent },
 
 
 

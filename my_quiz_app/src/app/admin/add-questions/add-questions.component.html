@@ -1,0 +1,21 @@
+<div class="p-8">
+    <h1 class="text-3xl font-bold mb-6 text-black">Add Questions</h1>
+    
+    <div class="mb-4">
+      <label class="block text-black text-sm font-bold mb-2">Question Text</label>
+      <input type="text" [(ngModel)]="questionText" class="input-field" placeholder="Enter the question text">
+    </div>
+    
+    <div class="mb-4">
+      <label class="block text-black text-sm font-bold mb-2">Answer</label>
+      <input type="text" [(ngModel)]="answer" class="input-field" placeholder="Enter the answer">
+    </div>
+    
+    <div class="mb-4">
+      <label class="block text-black text-sm font-bold mb-2">Options (comma-separated)</label>
+      <input type="text" [(ngModel)]="optionsString" class="input-field" placeholder="Option1, Option2, ...">
+    </div>
+    
+    <button class="btn-primary" (click)="addQuestion()">Add Question</button>
+  </div>
+  

@@ -19,4 +19,8 @@ export class QuizService {
   fetchQuestions(quizId: string) {
     return this.webReqService.get(`quiz/${quizId}/questions`);
   }
+  addQuestion(quizId: string, question: any) {
+    return this.webReqService.post(`quiz/${quizId}/questions`, question);
+  }
+
 }

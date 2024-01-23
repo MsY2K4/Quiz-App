@@ -30,4 +30,12 @@ export class QuizDetailsComponent implements OnInit {
       });
     }
   }
+  deleteQuestion(questionId: string) {
+    if (this.quizId !== null) {
+      this.quizService.deleteQuestion(this.quizId, questionId).subscribe(() => {
+        // Refresh the questions after deletion
+        this.fetchQuestions();
+      });
+    }
+  }
 }

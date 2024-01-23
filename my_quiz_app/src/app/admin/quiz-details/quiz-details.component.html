@@ -31,11 +31,11 @@
       </ng-template>
   </div>
 
-  <div class="mt-10 flex items-center justify-center gap-x-6">
-    <button  routerLink="/quizzes" class="bg-black text-white font-bold py-2 px-4 rounded inline-flex items-center justify-center">
+  <div class="mt-10 mb-4 flex items-center justify-center gap-x-6">
+    <a [routerLink]="['/quizzes', quizId, 'add-questions']" class="bg-black text-white font-bold py-2 px-4 rounded inline-flex items-center justify-center ">
+      Add Questions
+    </a>
+    <button  routerLink="/quizzes" class="bg-gray-500 text-white font-bold py-2 px-4 rounded inline-flex items-center justify-center">
         <span>Back</span>
       </button>
   </div>
-  <a [routerLink]="['/quizzes', quizId, 'add-questions']" class="bg-white text-black font-bold py-2 px-4 rounded inline-flex items-center justify-center w-full">
-    Add Questions
-  </a>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { QuizService } from '../../quiz.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-quiz',
@@ -9,7 +10,7 @@ import { QuizService } from '../../quiz.service';
 export class NewQuizComponent {
 
 
-  constructor(private quizService:QuizService){
+  constructor(private route: ActivatedRoute,private quizService:QuizService,private router: Router){
     
   }
   createNewQuiz() {
@@ -26,6 +27,8 @@ export class NewQuizComponent {
       (response: any) => {
         console.log(response);
         alert('Quiz created successfully!');
+        this.router.navigate(['/quizzes']);
+
       },
       (error) => {
         console.error(error);

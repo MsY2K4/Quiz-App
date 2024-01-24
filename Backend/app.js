@@ -77,7 +77,12 @@ app.post('/register', async (req, res) => {
           res.send(quizzes);
       });
     });
-
+    app.get('/quiz/:id', (req, res) => {
+      //return a specefic quiz
+      Quiz.findById(req.params.id).then((quiz) => {
+        res.send(quiz);
+      });
+    });
     app.post('/quiz', (req, res) => {
       // create new quiz
       const quizname = req.body.quizname;
@@ -94,9 +99,12 @@ app.post('/register', async (req, res) => {
           { _id: req.params.id },
           { $set: req.body }
       ).then(() => {
-          res.sendStatus(200);
+          res.sendStatus(204);
+      }).catch((error) => {
+          console.error('Error updating quiz:', error);
+          res.sendStatus(500);
       });
-    });
+  });
 
 
     app.delete('/quiz/:id', (req, res) => {

@@ -13,7 +13,7 @@ import { NewQuizComponent } from './admin/new-quiz/new-quiz.component';
 import { NavigateQuizzesComponent } from './user/navigate-quizzes/navigate-quizzes.component';
 import { QuizDetailsComponent } from './admin/quiz-details/quiz-details.component';
 import { AddQuestionsComponent } from './admin/add-questions/add-questions.component';
-
+import { UpdateQuizComponent } from './admin/update-quiz/update-quiz.component';
 const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:"about", component:AboutComponent},
@@ -27,6 +27,7 @@ const routes: Routes = [
   {path:"NewQuiz", component: NewQuizComponent},
   {path :"navigation" , component : NavigateQuizzesComponent},
   { path: 'quizzes/:quizId/add-questions', component: AddQuestionsComponent },
+  { path: 'quizzes/:quizId/update-quiz', component: UpdateQuizComponent },
 
 
 

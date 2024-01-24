@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { QuizService } from '../../quiz.service';
 
 interface Quiz {
+  id: string;
   quizname: string;
   quizdescription: string;
 }
@@ -31,5 +32,13 @@ export class QuizzesComponent {
     );
   }
   
-
+  deleteQuiz(quizId: string) {
+    this.quizService.deleteQuiz(quizId).subscribe(
+      () => {
+        this.quizzes = this.quizzes.filter((quiz) => quiz.id !== quizId);
+        this.search();
+      }
+    );
+  }
+  
 }

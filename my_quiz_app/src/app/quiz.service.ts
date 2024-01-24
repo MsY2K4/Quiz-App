@@ -15,6 +15,14 @@ export class QuizService {
   fetchQuizes() {
     return this.webReqService.get("quiz");
   }
+  fetchQuizInfo(quizId: string) {
+    return this.webReqService.get(`quiz/${quizId}`);
+  }
+
+  updateQuiz(quizId: string, name: string, description: string) {
+    return this.webReqService.patch(`quiz/${quizId}`, { quizname: name, quizdescription: description });
+  }
+
   deleteQuiz(quizId: string) {
     return this.webReqService.delete(`quiz/${quizId}`);
   }

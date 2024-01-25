@@ -1,0 +1,28 @@
+<div class="border rounded-md p-4 w-full mx-auto max-w-2xl mt-4"> 
+    <div class="p-8 rounded-lg shadow-md">
+      <!-- Display current question -->
+      <h3 class="text-xl lg:text-2xl font-semibold">{{ currentQuestion.questionText }}</h3>
+      <br>
+      <!-- Display options -->
+      <div *ngFor="let option of currentQuestion.options" class="mb-2">
+        <label for="{{ option }}" class="flex bg-black text-white rounded-md px-3 py-2 my-3 hover:bg-gray-500 ">
+            <input type="radio" name="option" [value]="option" (change)="answerQuestion(option)" id="{{ option }}" class="hidden ">
+            <i class="pl-2">{{ option }}</i>
+        </label>
+      </div>
+      
+      <!-- Display buttons based on question index -->
+      <div class="flex justify-center mt-4">
+        <div *ngIf="currentIndex !== questions.length - 1">
+            <button (click)="nextQuestion()" class="bg-black hover:bg-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-200 ease-in-out transform hover:scale-105 cursor-pointer">
+                Next
+            </button>
+        </div>
+        <div *ngIf="currentIndex === questions.length - 1">
+            <button (click)="finishQuiz()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-200 ease-in-out transform hover:scale-105 cursor-pointer">
+                Finish
+            </button>
+        </div>
+    </div>
+</div>
+</div>

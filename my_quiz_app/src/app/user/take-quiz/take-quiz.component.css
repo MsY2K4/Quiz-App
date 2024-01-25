@@ -1,0 +1,9 @@
+
+  label {
+    cursor: pointer;
+  }
+  
+  input[type="radio"]:checked + i{
+    color: LightSeaGreen;
+  }
+  

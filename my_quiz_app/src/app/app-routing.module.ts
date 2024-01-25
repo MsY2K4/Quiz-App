@@ -14,6 +14,10 @@ import { NavigateQuizzesComponent } from './user/navigate-quizzes/navigate-quizz
 import { QuizDetailsComponent } from './admin/quiz-details/quiz-details.component';
 import { AddQuestionsComponent } from './admin/add-questions/add-questions.component';
 import { UpdateQuizComponent } from './admin/update-quiz/update-quiz.component';
+import { TakeQuizComponent } from './user/take-quiz/take-quiz.component';
+
+
+
 const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:"about", component:AboutComponent},
@@ -28,6 +32,7 @@ const routes: Routes = [
   {path :"navigation" , component : NavigateQuizzesComponent},
   { path: 'quizzes/:quizId/add-questions', component: AddQuestionsComponent },
   { path: 'quizzes/:quizId/update-quiz', component: UpdateQuizComponent },
+  { path: 'quizzes/:quizId/take', component: TakeQuizComponent },
 
 
 

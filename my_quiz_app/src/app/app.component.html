@@ -1,5 +1,16 @@
 <div class="flex flex-col min-h-screen">
-    <app-navbar></app-navbar>
+    <div *ngIf="isLoggedIn">
+        <div *ngIf="isAdmin">
+            <app-admin-nav (logoutEvent)="onLogout()"></app-admin-nav>
+        </div>
+        <div *ngIf="!isAdmin">
+            <app-user-nav (logoutEvent)="onLogout()"></app-user-nav>
+        </div>
+      </div>
+      <div *ngIf="!isLoggedIn">
+            <app-navbar></app-navbar>
+      </div>
+          
     <div class="flex-grow">
         <router-outlet></router-outlet>
     </div>

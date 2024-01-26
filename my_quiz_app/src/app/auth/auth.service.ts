@@ -18,4 +18,16 @@ export class AuthService {
     const registerData = { email, password };
     return this.http.post<any>(`${this.apiUrl}/register`, registerData);
   }
+  getUserRole(token: string): Observable<any> {
+    const headers = { 'Authorization': token };
+    return this.http.get<any>(`${this.apiUrl}/user/role`, { headers });
+  }
+
+  logout(): Observable<any> {
+    localStorage.removeItem('token');
+    return new Observable(observer => {
+      observer.next();
+      observer.complete();
+    });
+  }
 }

@@ -1,0 +1,30 @@
+
+<nav class="bg-black p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a routerLink="/home" class="text-white text-lg font-bold">Mindscape</a>
+      <div class="hidden md:flex space-x-4">
+        <a routerLink="/home" class="text-white px-4 py-2">Home</a>
+        <a routerLink="/about" class="text-white px-4 py-2">About</a>
+        <a routerLink="/contact" class="text-white px-4 py-2">Contact</a>
+        <a routerLink="/navigation" class="text-white px-4 py-2">Quizzes</a>
+        <button class="text-red-500 px-4 py-2" (click)="logout()">Logout</button>
+
+      </div>
+      <div class="md:hidden">
+        <!-- Add a responsive menu button -->
+        <button class="text-white focus:outline-none" (click)="toggleMenu()">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div *ngIf="isMenuOpen" class="md:hidden">
+      <a routerLink="/home" class="text-white block py-2" (click)="toggleMenu()">Home</a>
+      <a routerLink="/about" class="text-white block py-2" (click)="toggleMenu()">About</a>
+      <a routerLink="/contact" class="text-white block py-2" (click)="toggleMenu()">Contact</a>
+      <button class="text-red-500 block py-2" (click)="logout(); toggleMenu()">Logout</button>
+    </div>
+  </nav>
+  

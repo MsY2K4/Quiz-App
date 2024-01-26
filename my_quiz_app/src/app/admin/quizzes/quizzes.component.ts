@@ -37,6 +37,7 @@ export class QuizzesComponent {
       () => {
         this.quizzes = this.quizzes.filter((quiz) => quiz.id !== quizId);
         this.search();
+        window.location.reload();
       }
     );
   }

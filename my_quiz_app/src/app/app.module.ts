@@ -22,6 +22,8 @@ import { QuizDetailsComponent } from './admin/quiz-details/quiz-details.componen
 import { AddQuestionsComponent } from './admin/add-questions/add-questions.component';
 import { UpdateQuizComponent } from './admin/update-quiz/update-quiz.component';
 import { TakeQuizComponent } from './user/take-quiz/take-quiz.component';
+import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
+import { UserNavComponent } from './user/user-nav/user-nav.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { TakeQuizComponent } from './user/take-quiz/take-quiz.component';
     AddQuestionsComponent,
     UpdateQuizComponent,
     TakeQuizComponent,
+    AdminNavComponent,
+    UserNavComponent,
   ],
   imports: [
     BrowserModule,

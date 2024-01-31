@@ -15,7 +15,7 @@ import { QuizDetailsComponent } from './admin/quiz-details/quiz-details.componen
 import { AddQuestionsComponent } from './admin/add-questions/add-questions.component';
 import { UpdateQuizComponent } from './admin/update-quiz/update-quiz.component';
 import { TakeQuizComponent } from './user/take-quiz/take-quiz.component';
-
+import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
@@ -26,12 +26,12 @@ const routes: Routes = [
   {path:"footer", component:FooterComponent},
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
-  {path:"quizzes", component: QuizzesComponent},
-  { path: 'quizzes/:quizId', component: QuizDetailsComponent },
-  {path:"NewQuiz", component: NewQuizComponent},
+  {path:"quizzes", component: QuizzesComponent,canActivate: [AuthGuard]},
+  { path: 'quizzes/:quizId', component: QuizDetailsComponent ,canActivate: [AuthGuard]},
+  {path:"NewQuiz", component: NewQuizComponent,canActivate: [AuthGuard]},
   {path :"navigation" , component : NavigateQuizzesComponent},
-  { path: 'quizzes/:quizId/add-questions', component: AddQuestionsComponent },
-  { path: 'quizzes/:quizId/update-quiz', component: UpdateQuizComponent },
+  { path: 'quizzes/:quizId/add-questions', component: AddQuestionsComponent ,canActivate: [AuthGuard]},
+  { path: 'quizzes/:quizId/update-quiz', component: UpdateQuizComponent ,canActivate: [AuthGuard]},
   { path: 'quizzes/:quizId/take', component: TakeQuizComponent },
 
 
